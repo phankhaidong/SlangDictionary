@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Data;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 /**
  *
@@ -26,7 +29,7 @@ public class HashTable{
     private int size;
     public HashTable(){
         bucketArray = new ArrayList<>();
-        numBuckets = 100000;
+        numBuckets = 20000;
         size = 0;
         for(int i=0;i<numBuckets;i++){
             bucketArray.add(null);
@@ -83,21 +86,21 @@ public class HashTable{
         
         ArrayList<HashNode> meaningArray = bucketArray.get(bucketIndex);
         HashNode tempNode = new HashNode(key,value,hashCode);
-        System.out.println("Add "+key+" "+value+" "+hashCode);        
+        System.out.println("Add "+key+" "+value+" "+bucketIndex);        
         if(meaningArray == null){
             if(flag ==true){
         
             meaningArray = new ArrayList<>();
             meaningArray.add(tempNode);
             bucketArray.add(bucketIndex, meaningArray);
-            //System.out.println(bucketArray.get(bucketIndex).get(0).value);
+            System.out.println(bucketArray.get(bucketIndex).get(0).value);
             }
         }
         else{
             if(flag == false){
                 if (meaningArray.contains(tempNode)==false){
                     meaningArray.add(tempNode);
-                    //System.out.println(bucketArray.get(bucketIndex).get(1).value+" "+bucketIndex);
+                    System.out.println(bucketArray.get(bucketIndex).get(1).value+" "+bucketIndex);
                     return true;
             }
         }
@@ -123,25 +126,38 @@ public class HashTable{
         }
         return true;
     }
-        
+    
+    public boolean ReadFile(String src){
+        try{
+            FileReader fr = new FileReader(src);
+            BufferedReader br = new BufferedReader(fr);
+            String slang, definition;
+            String[] split;
+            int n =0;
+            String def;
+            br.readLine();
+            while((def=br.readLine())!=null){
+                n++;
+                split = def.split("`");
+                String[] meaning = split[1].split("\\|");
+                for(String item: meaning){
+                    add(split[0],item,false);
+                }
+            }
+            br.close();
+            return true;
+        }
+        catch(IOException ioe){
+            return false;
+        }
+    }
+    
      public static void main(String[] args)
     {
         HashTable map = new HashTable();
-        map.add("#1","Number one",false);
-        map.add("$","Dollar",false);
-        map.add("$","money",true);
-        map.add("$_$","Has money",false);
-        map.add("$","cash",true);
-        ArrayList<HashNode> temp = map.get("$");
-        for(HashNode item: temp){
-            System.out.println(item.value);
-        }
-        map.removeMeaning("$","money");
-        temp = map.get("$");
-        for(HashNode item: temp){
-            System.out.println(item.value);
-        }
-        map.removeSlang("$");
-        System.out.println(map.get("$"));
+        map.ReadFile("slang.txt");
+        System.out.println(map.size());
+        
+        
     }
 }
