@@ -68,7 +68,7 @@ public class HashTable{
         bucketArray.remove(bucketIndex);        
     }
     
-    public ArrayList<HashNode> get (String key){
+    public ArrayList<HashNode> getDefBySlang (String key){
         ArrayList<HashNode> result = new ArrayList();
         int bucketIndex = getBucketIndex(key);
         //int hashCode = hashCode(key);
@@ -78,37 +78,47 @@ public class HashTable{
         return result;
     }
     
+    public Set<String> getSlangByDef(String def){
+        Set<String> resultSet = new HashSet<String>();
+        for(ArrayList<HashNode> item : bucketArray){
+            if(item!=null){
+                for(HashNode node : item){
+                    if(node.value.contains(def)){
+                        resultSet.add(node.key);
+                    }
+                }
+            }
+        }
+        return resultSet;
+    }
+    
     public boolean add(String key, String value,boolean flag)
     {
         // Find head of chain for given key
         int bucketIndex = getBucketIndex(key);
         int hashCode = hashCode(key);
         
-        ArrayList<HashNode> meaningArray = bucketArray.get(bucketIndex);
+        ArrayList<HashNode> meaningArray = new ArrayList<>();
         HashNode tempNode = new HashNode(key,value,hashCode);
-        System.out.println("Add "+key+" "+value+" "+bucketIndex);        
-        if(meaningArray == null){
-            if(flag ==true){
-        
-            meaningArray = new ArrayList<>();
+
+        //add with overwrite
+        if(flag == true){
             meaningArray.add(tempNode);
-            bucketArray.add(bucketIndex, meaningArray);
-            System.out.println(bucketArray.get(bucketIndex).get(0).value);
-            }
+            System.out.println("OK");
+            bucketArray.set(bucketIndex, meaningArray);
         }
+        //add with duplicate
         else{
-            if(flag == false){
-                if (meaningArray.contains(tempNode)==false){
-                    meaningArray.add(tempNode);
-                    System.out.println(bucketArray.get(bucketIndex).get(1).value+" "+bucketIndex);
-                    return true;
+            if(bucketArray.get(bucketIndex)!=null){
+                meaningArray = bucketArray.get(bucketIndex);
             }
+            meaningArray.add(tempNode);
+            bucketArray.set(bucketIndex, meaningArray);
         }
-            }
         size++;
         
         // If load factor goes beyond threshold, then
-        // double hash table size
+        //double hash table size
         if ((1.0 * size) / numBuckets >= 0.7) {
             //FIX HERE
             ArrayList<ArrayList<HashNode>> temp = bucketArray;
@@ -141,7 +151,7 @@ public class HashTable{
                 split = def.split("`");
                 String[] meaning = split[1].split("\\|");
                 for(String item: meaning){
-                    add(split[0],item,false);
+                    this.add(split[0],item,false);
                 }
             }
             br.close();
@@ -156,8 +166,14 @@ public class HashTable{
     {
         HashTable map = new HashTable();
         map.ReadFile("slang.txt");
-        System.out.println(map.size());
-        
-        
+        //System.out.println(map.size());
+        Set<String> result = map.getSlangByDef("money");
+        for(String item: result){
+            System.out.println(item);
+        }
+//        ArrayList<HashNode> temp = map.getDefBySlang("$");
+//        for(HashNode item: temp){
+//            System.out.println(item.value);
+//        }
     }
 }
