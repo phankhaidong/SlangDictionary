@@ -21,6 +21,9 @@ class HashNode{
         this.value = value;
         this.hashCode = hashCode;
     }
+    public String getKey(){
+        return key;
+    }
 }
 
 public class HashTable{
@@ -34,6 +37,22 @@ public class HashTable{
         for(int i=0;i<numBuckets;i++){
             bucketArray.add(null);
         }
+    }
+    
+    public String getRandomSlang(){
+        String randomSlang=null;
+        while(randomSlang==null){
+            Random random = new Random();
+            int num = random.nextInt(size - 0) + 0;
+            if(bucketArray.get(num)!=null){
+                randomSlang = bucketArray.get(num).get(0).key;
+            }
+        }
+        return randomSlang;
+    }
+    
+    public ArrayList<ArrayList<HashNode>> getBucketArr(){
+        return bucketArray;
     }
     
     public int size(){return size;}
@@ -68,14 +87,18 @@ public class HashTable{
         bucketArray.remove(bucketIndex);        
     }
     
-    public ArrayList<HashNode> getDefBySlang (String key){
-        ArrayList<HashNode> result = new ArrayList();
+    public Set<String> getDefBySlang (String key){
+        Set<String> result = new HashSet<String>();
         int bucketIndex = getBucketIndex(key);
-        //int hashCode = hashCode(key);
-        
-        result = bucketArray.get(bucketIndex);
-        
-        return result;
+        if(bucketArray.get(bucketIndex)!=null){
+            for(HashNode item: bucketArray.get(bucketIndex)){
+                result.add(item.value);
+            }
+            return result;
+        }
+        else{
+            return null;
+        }
     }
     
     public Set<String> getSlangByDef(String def){
@@ -91,7 +114,15 @@ public class HashTable{
         }
         return resultSet;
     }
-    
+    public boolean checkKeyExist(String key){
+        int index = getBucketIndex(key);
+        if(bucketArray.get(index)!=null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     public boolean add(String key, String value,boolean flag)
     {
         // Find head of chain for given key
@@ -166,14 +197,7 @@ public class HashTable{
     {
         HashTable map = new HashTable();
         map.ReadFile("slang.txt");
-        //System.out.println(map.size());
-        Set<String> result = map.getSlangByDef("money");
-        for(String item: result){
-            System.out.println(item);
-        }
-//        ArrayList<HashNode> temp = map.getDefBySlang("$");
-//        for(HashNode item: temp){
-//            System.out.println(item.value);
-//        }
+        System.out.println(map.size());
+        System.out.println(map.getRandomSlang());
     }
 }
