@@ -1,0 +1,27 @@
+Tự chấm điểm các chức năng:
+1. Chức năng tìm kiếm theo slang word.
+- Điểm [10]
+2. Chức năng tìm kiếm theo definition, hiển thị ra tất cả các slang words mà trong defintion có chứa keyword gõ vào.
+- Điểm [10]
+3. Chức năng hiển thị history, danh sách các slang word đã tìm kiếm.
+- Điểm [10]
+4. Chức năng add 1 slang words mới. Nếu slang words trùng thì thông báo cho người dùng, confirm có overwrite hay duplicate ra 1 slang word mới.
+- Điểm [10]
+5. Chức năng edit 1 slang word.
+- Điểm [10]
+6. Chức năng delete 1 slang word. Confirm trước khi xoá.
+- Điểm [10]
+7. Chức năng reset danh sách slang words gốc.
+- Điểm [10]
+8. Chức năng random 1 slang word (On this day slang word).
+- Điểm [10]
+9. Chức năng đố vui, chương trình hiển thị 1 random slang word, với 4 đáp án cho người dùng chọn.
+- Điểm [10]
+10. Chức năng đố vui, chương trình hiển thị 1 definition, với 4 slang words đáp án cho người dùng chọn.
+- Điểm [10]
+
+Tổng kết:  100/100
+
+LinkVideoDemo: https://drive.google.com/file/d/1QobbyjLoYZehW3WdEuRvwmqEA-aDn3YG/view?usp=sharing
+
+

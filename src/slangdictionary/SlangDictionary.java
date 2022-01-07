@@ -16,8 +16,8 @@ public class SlangDictionary {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //HashTable map = new HashTable();
-        
+        MainForm mainForm = new MainForm();
+        mainForm.setVisible(true);
     }
     
 }

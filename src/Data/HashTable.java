@@ -5,7 +5,9 @@
 package Data;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 /**
  *
@@ -62,7 +64,7 @@ public class HashTable{
         return Objects.hashCode(key);
     }
     
-    private int getBucketIndex(String key){
+    public int getBucketIndex(String key){
         int hashCode = hashCode(key);
         int index = hashCode % numBuckets;
         index = index < 0 ? index * -1:index;
@@ -180,7 +182,7 @@ public class HashTable{
             while((def=br.readLine())!=null){
                 n++;
                 split = def.split("`");
-                String[] meaning = split[1].split("\\|");
+                String[] meaning = split[1].split("\\| ");
                 for(String item: meaning){
                     this.add(split[0],item,false);
                 }
@@ -193,11 +195,55 @@ public class HashTable{
         }
     }
     
+    public boolean EditSlang(String key, String value, String newValue){
+        if(checkKeyExist(key)==true){
+            int index = getBucketIndex(key);
+            System.out.println(index);
+            int i=0;
+            for(HashNode item: bucketArray.get(index)){
+                System.out.println(item.key+" "+item.value);
+                if(item.value.equals(value)){
+                    bucketArray.get(index).set(i, new HashNode(key,newValue,hashCode(key)));
+                }
+                i++;
+            }
+            return true;
+        }
+        return false;
+    }
+    public void WriteToFile(String des){
+        try{
+            FileWriter fw = new FileWriter(des);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println("Slag`Meaning");
+            for(ArrayList<HashNode> item : bucketArray){
+                if(item!=null){
+                    String toWrite = item.get(0).key+'`';
+                    for(int i=0;i<item.size();i++){
+                        toWrite += item.get(i).value;
+                        if(i!=item.size()-1){
+                            toWrite += "| ";
+                        }
+                    }
+                    pw.println(toWrite);
+                }
+            }
+            pw.close();
+        }
+        catch(IOException ioe){
+            System.out.println(ioe.getMessage());
+        }
+    }
      public static void main(String[] args)
     {
         HashTable map = new HashTable();
         map.ReadFile("slang.txt");
-        System.out.println(map.size());
-        System.out.println(map.getRandomSlang());
+//        System.out.println(map.size());
+//        //System.out.println(map.getRandomSlang());
+//        map.EditSlang("$", "money", "monley");
+//        for(String item: map.getDefBySlang("$")){
+//            System.out.println(item);
+//        }
+        map.WriteToFile("using.txt");
     }
 }
