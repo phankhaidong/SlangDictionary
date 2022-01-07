@@ -22,8 +22,9 @@ import javax.swing.JPanel;
 public class MainForm extends javax.swing.JFrame {
     HashTable table = new HashTable();
     ArrayList<JButton> WordAnsButtons = new ArrayList();
-    //ArrayList<String>SearchHistory = new ArrayList<String>();
+    ArrayList<JButton> DefAnsButtons = new ArrayList();
     String WordAns;
+    String DefAns;
     public void switchPanels(JPanel panel){
         layeredPane.removeAll();
         layeredPane.add(panel);
@@ -95,6 +96,13 @@ public class MainForm extends javax.swing.JFrame {
         WordQuizAgain = new javax.swing.JButton();
         DefQuizPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        Definition = new javax.swing.JLabel();
+        DefQuizAgain = new javax.swing.JButton();
         QuizOptionPanel = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         WordQuizOption = new javax.swing.JButton();
@@ -319,6 +327,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("GUEST THE DEFINITION");
 
         jLabel12.setText("Word:");
@@ -416,28 +425,104 @@ public class MainForm extends javax.swing.JFrame {
 
         jLayeredPane1.add(WordQuizPanel, "card2");
 
-        jLabel11.setText("1 Def");
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("GUEST THE SLANG");
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("jButton5");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("jButton5");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("jButton5");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Definition: ");
+
+        Definition.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Definition.setText("jLabel14");
+
+        DefQuizAgain.setText("Play again");
+        DefQuizAgain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DefQuizAgainActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DefQuizPanelLayout = new javax.swing.GroupLayout(DefQuizPanel);
         DefQuizPanel.setLayout(DefQuizPanelLayout);
         DefQuizPanelLayout.setHorizontalGroup(
             DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DefQuizPanelLayout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addGap(120, 120, 120)
+                .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(DefQuizPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(34, 34, 34)
+                        .addComponent(Definition, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
+                    .addGroup(DefQuizPanelLayout.createSequentialGroup()
+                        .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))))
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DefQuizPanelLayout.createSequentialGroup()
+                .addContainerGap(235, Short.MAX_VALUE)
+                .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DefQuizPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(258, 258, 258))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DefQuizPanelLayout.createSequentialGroup()
+                        .addComponent(DefQuizAgain)
+                        .addGap(264, 264, 264))))
         );
         DefQuizPanelLayout.setVerticalGroup(
             DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DefQuizPanelLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(Definition))
+                .addGap(34, 34, 34)
+                .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(DefQuizAgain)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(DefQuizPanel, "card3");
 
-        jLabel13.setText("PEAK AN OPTIONS");
+        jLabel13.setText("PICK AN OPTIONS");
 
         WordQuizOption.setText("1 WORD - 4 DEFINITIONS");
         WordQuizOption.addActionListener(new java.awt.event.ActionListener() {
@@ -466,7 +551,7 @@ public class MainForm extends javax.swing.JFrame {
                         .addGap(154, 154, 154)
                         .addGroup(QuizOptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(WordQuizOption, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                            .addComponent(DefQuizOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(DefQuizOption, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))))
                 .addContainerGap(184, Short.MAX_VALUE))
         );
         QuizOptionPanelLayout.setVerticalGroup(
@@ -477,8 +562,8 @@ public class MainForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(WordQuizOption, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(DefQuizOption, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addComponent(DefQuizOption, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(QuizOptionPanel, "card3");
@@ -737,13 +822,24 @@ public class MainForm extends javax.swing.JFrame {
         WordAns = table.getDefBySlang(wordList.get(num)).iterator().next();
         //myButton.get(num).setText(table.getDefBySlang(wordList.get(num)).iterator().next());
         for(int i=0;i<4;i++){
-            //if(i==num) continue;
             WordAnsButtons.get(i).setText(table.getDefBySlang(wordList.get(i)).iterator().next());
         }
         switchPanels(WordQuizPanel);
     }//GEN-LAST:event_WordQuizOptionActionPerformed
 
     private void DefQuizOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefQuizOptionActionPerformed
+        ArrayList<String> wordList = InitWordQuiz();
+        Random random = new Random();
+        int num = random.nextInt(4 - 0) + 0;
+        DefAnsButtons.add(jButton5);
+        DefAnsButtons.add(jButton6);
+        DefAnsButtons.add(jButton7);
+        DefAnsButtons.add(jButton8);
+        Definition.setText(table.getDefBySlang(wordList.get(num)).iterator().next());
+        DefAns = wordList.get(num);
+        for(int i=0 ;i< 4;i++){
+            DefAnsButtons.get(i).setText(wordList.get(i));
+        }
         switchPanels(DefQuizPanel);
     }//GEN-LAST:event_DefQuizOptionActionPerformed
 
@@ -783,6 +879,40 @@ public class MainForm extends javax.swing.JFrame {
         switchPanels(WordQuizPanel);
     }//GEN-LAST:event_WordQuizAgainActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        checkDefAns(jButton5);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        checkDefAns(jButton6);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        checkDefAns(jButton7);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        checkDefAns(jButton8);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void DefQuizAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefQuizAgainActionPerformed
+        DefAnsButtons.clear();
+        ArrayList<String> wordList = InitWordQuiz();
+        Random random = new Random();
+        int num = random.nextInt(4 - 0) + 0;
+        DefAnsButtons.add(jButton5);
+        DefAnsButtons.add(jButton6);
+        DefAnsButtons.add(jButton7);
+        DefAnsButtons.add(jButton8);
+        Definition.setText(table.getDefBySlang(wordList.get(num)).iterator().next());
+        DefAns = wordList.get(num);
+        for(int i=0 ;i< 4;i++){
+            DefAnsButtons.get(i).setText(wordList.get(i));
+            DefAnsButtons.get(i).setBackground(Color.getHSBColor(187, 187, 187));
+        }
+        switchPanels(DefQuizPanel);
+    }//GEN-LAST:event_DefQuizAgainActionPerformed
+
     void checkWordAns(JButton button){
         for(JButton item: WordAnsButtons){
             if(item.getText().equals(WordAns)){
@@ -798,7 +928,21 @@ public class MainForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"INCORRECT");
         }
     }
-    
+    void checkDefAns(JButton button){
+        for(JButton item: DefAnsButtons){
+            if(item.getText().equals(DefAns)){
+                item.setBackground(Color.GREEN);
+                continue;
+            }
+            item.setBackground(Color.RED);
+        }
+        if(button.getText().equals(DefAns)){
+            JOptionPane.showMessageDialog(rootPane,"CORRECT");
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane,"INCORRECT");
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -840,9 +984,11 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton AddSlangButton;
     private javax.swing.JPanel AddSlangPanel;
     private javax.swing.JList<String> DefList;
+    private javax.swing.JButton DefQuizAgain;
     private javax.swing.JButton DefQuizOption;
     private javax.swing.JPanel DefQuizPanel;
     private javax.swing.JTextField DefTxtField;
+    private javax.swing.JLabel Definition;
     private javax.swing.JComboBox<String> DefinitionList;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DeleteSlangButton;
@@ -874,6 +1020,10 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -886,6 +1036,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
