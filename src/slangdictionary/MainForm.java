@@ -49,19 +49,11 @@ public class MainForm extends javax.swing.JFrame {
         AddSlangButton = new javax.swing.JButton();
         DeleteSlangButton = new javax.swing.JButton();
         layeredPane = new javax.swing.JLayeredPane();
-        AddSlangPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        SlangTxtField = new javax.swing.JTextField();
-        DefTxtField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        AddButon = new javax.swing.JButton();
         DeleteSlangPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         DeleteTxtField = new javax.swing.JTextField();
         DeleteButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        QuizPanel = new javax.swing.JPanel();
         RandomPanel = new javax.swing.JPanel();
         ARandomSlang = new javax.swing.JTextField();
         GoRandomButton = new javax.swing.JButton();
@@ -80,8 +72,25 @@ public class MainForm extends javax.swing.JFrame {
         SearchHistory = new javax.swing.JComboBox<>();
         EditDefTxtField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        QuizPanel = new javax.swing.JPanel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        DefQuizButton = new javax.swing.JButton();
+        WordQuizButton = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        WordQuizPanel = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        DefQuizPanel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        AddSlangPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        SlangTxtField = new javax.swing.JTextField();
+        DefTxtField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        AddButon = new javax.swing.JButton();
         ResetButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        QuizNavButton = new javax.swing.JButton();
         MainButton = new javax.swing.JButton();
         RandomButton = new javax.swing.JButton();
 
@@ -109,63 +118,6 @@ public class MainForm extends javax.swing.JFrame {
 
         layeredPane.setLayout(new java.awt.CardLayout());
 
-        AddSlangPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel1.setText("Add new slang word");
-
-        jLabel3.setText("Slang word:");
-
-        jLabel4.setText("Definition:");
-
-        AddButon.setText("Add");
-        AddButon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddButonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AddSlangPanelLayout = new javax.swing.GroupLayout(AddSlangPanel);
-        AddSlangPanel.setLayout(AddSlangPanelLayout);
-        AddSlangPanelLayout.setHorizontalGroup(
-            AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddSlangPanelLayout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
-                .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SlangTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(AddSlangPanelLayout.createSequentialGroup()
-                            .addGap(61, 61, 61)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AddButon)
-                            .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3)
-                                .addGroup(AddSlangPanelLayout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(DefTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(93, 93, 93))
-        );
-        AddSlangPanelLayout.setVerticalGroup(
-            AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddSlangPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SlangTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DefTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AddButon)
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
-
-        layeredPane.add(AddSlangPanel, "card2");
-
         DeleteSlangPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setText("Delete Slang Word");
@@ -184,7 +136,7 @@ public class MainForm extends javax.swing.JFrame {
         DeleteSlangPanelLayout.setHorizontalGroup(
             DeleteSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DeleteSlangPanelLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(139, 139, 139)
                 .addGroup(DeleteSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(DeleteSlangPanelLayout.createSequentialGroup()
@@ -197,12 +149,12 @@ public class MainForm extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteSlangPanelLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         DeleteSlangPanelLayout.setVerticalGroup(
             DeleteSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DeleteSlangPanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel5)
@@ -210,23 +162,10 @@ public class MainForm extends javax.swing.JFrame {
                 .addComponent(DeleteTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
 
         layeredPane.add(DeleteSlangPanel, "card3");
-
-        javax.swing.GroupLayout QuizPanelLayout = new javax.swing.GroupLayout(QuizPanel);
-        QuizPanel.setLayout(QuizPanelLayout);
-        QuizPanelLayout.setHorizontalGroup(
-            QuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
-        );
-        QuizPanelLayout.setVerticalGroup(
-            QuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
-        );
-
-        layeredPane.add(QuizPanel, "card5");
 
         ARandomSlang.setEditable(false);
 
@@ -242,27 +181,26 @@ public class MainForm extends javax.swing.JFrame {
         RandomPanelLayout.setHorizontalGroup(
             RandomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RandomPanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(65, 65, 65)
                 .addGroup(RandomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RandomPanelLayout.createSequentialGroup()
-                        .addComponent(ARandomSlang)
-                        .addGap(68, 68, 68))
+                    .addComponent(ARandomSlang)
                     .addGroup(RandomPanelLayout.createSequentialGroup()
                         .addComponent(DefinitionList, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(GoRandomButton)
-                        .addGap(0, 66, Short.MAX_VALUE))))
+                        .addGap(117, 117, 117)))
+                .addGap(49, 49, 49))
         );
         RandomPanelLayout.setVerticalGroup(
             RandomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RandomPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(ARandomSlang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(RandomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(GoRandomButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(DefinitionList))
-                .addContainerGap(122, Short.MAX_VALUE))
+                    .addComponent(GoRandomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DefinitionList, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
 
         layeredPane.add(RandomPanel, "card6");
@@ -316,7 +254,7 @@ public class MainForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SearchType, 0, 164, Short.MAX_VALUE))
+                            .addComponent(SearchType, 0, 329, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -353,7 +291,7 @@ public class MainForm extends javax.swing.JFrame {
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EditButton)
                     .addComponent(EditDefTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -361,6 +299,219 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         layeredPane.add(MainPanel, "card7");
+
+        DefQuizButton.setText("DefQuizButton");
+        DefQuizButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DefQuizButtonActionPerformed(evt);
+            }
+        });
+
+        WordQuizButton.setText("1 Word - 4 Defines");
+        WordQuizButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WordQuizButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Options");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(WordQuizButton, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(250, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(246, 246, 246))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(174, 174, 174)
+                    .addComponent(DefQuizButton, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addGap(175, 175, 175)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(74, 74, 74)
+                .addComponent(WordQuizButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(126, 126, 126)
+                    .addComponent(DefQuizButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(180, Short.MAX_VALUE)))
+        );
+
+        jLabel10.setText("1 Word");
+
+        javax.swing.GroupLayout WordQuizPanelLayout = new javax.swing.GroupLayout(WordQuizPanel);
+        WordQuizPanel.setLayout(WordQuizPanelLayout);
+        WordQuizPanelLayout.setHorizontalGroup(
+            WordQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+            .addGroup(WordQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WordQuizPanelLayout.createSequentialGroup()
+                    .addContainerGap(127, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(171, Short.MAX_VALUE)))
+        );
+        WordQuizPanelLayout.setVerticalGroup(
+            WordQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 352, Short.MAX_VALUE)
+            .addGroup(WordQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WordQuizPanelLayout.createSequentialGroup()
+                    .addContainerGap(97, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(108, Short.MAX_VALUE)))
+        );
+
+        jLabel11.setText("1 Def");
+
+        javax.swing.GroupLayout DefQuizPanelLayout = new javax.swing.GroupLayout(DefQuizPanel);
+        DefQuizPanel.setLayout(DefQuizPanelLayout);
+        DefQuizPanelLayout.setHorizontalGroup(
+            DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+            .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DefQuizPanelLayout.createSequentialGroup()
+                    .addContainerGap(127, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(171, Short.MAX_VALUE)))
+        );
+        DefQuizPanelLayout.setVerticalGroup(
+            DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 352, Short.MAX_VALUE)
+            .addGroup(DefQuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DefQuizPanelLayout.createSequentialGroup()
+                    .addContainerGap(97, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(108, Short.MAX_VALUE)))
+        );
+
+        jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(WordQuizPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(DefQuizPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(WordQuizPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(DefQuizPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 374, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(WordQuizPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(DefQuizPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout QuizPanelLayout = new javax.swing.GroupLayout(QuizPanel);
+        QuizPanel.setLayout(QuizPanelLayout);
+        QuizPanelLayout.setHorizontalGroup(
+            QuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(QuizPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        QuizPanelLayout.setVerticalGroup(
+            QuizPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(QuizPanelLayout.createSequentialGroup()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 128, Short.MAX_VALUE))
+        );
+
+        layeredPane.add(QuizPanel, "card5");
+
+        AddSlangPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setText("Add new slang word");
+
+        jLabel3.setText("Slang word:");
+
+        jLabel4.setText("Definition:");
+
+        AddButon.setText("Add");
+        AddButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddButonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddSlangPanelLayout = new javax.swing.GroupLayout(AddSlangPanel);
+        AddSlangPanel.setLayout(AddSlangPanelLayout);
+        AddSlangPanelLayout.setHorizontalGroup(
+            AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddSlangPanelLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SlangTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AddSlangPanelLayout.createSequentialGroup()
+                            .addGap(61, 61, 61)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddButon)
+                            .addGroup(AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel3)
+                                .addGroup(AddSlangPanelLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(DefTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(203, Short.MAX_VALUE))
+        );
+        AddSlangPanelLayout.setVerticalGroup(
+            AddSlangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddSlangPanelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SlangTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DefTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AddButon)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+
+        layeredPane.add(AddSlangPanel, "card2");
 
         getContentPane().add(layeredPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 63, -1, -1));
 
@@ -372,8 +523,13 @@ public class MainForm extends javax.swing.JFrame {
         });
         getContentPane().add(ResetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 190, 108, -1));
 
-        jButton2.setText("Quiz");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 224, 108, -1));
+        QuizNavButton.setText("Quiz");
+        QuizNavButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuizNavButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(QuizNavButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 224, 108, -1));
 
         MainButton.setText("Main");
         MainButton.addActionListener(new java.awt.event.ActionListener() {
@@ -391,7 +547,7 @@ public class MainForm extends javax.swing.JFrame {
         });
         getContentPane().add(RandomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 264, 108, -1));
 
-        setSize(new java.awt.Dimension(581, 388));
+        setSize(new java.awt.Dimension(742, 479));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -520,6 +676,18 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AddButonActionPerformed
 
+    private void QuizNavButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizNavButtonActionPerformed
+        switchPanels(QuizPanel);
+    }//GEN-LAST:event_QuizNavButtonActionPerformed
+
+    private void WordQuizButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WordQuizButtonActionPerformed
+        switchPanels(WordQuizPanel);
+    }//GEN-LAST:event_WordQuizButtonActionPerformed
+
+    private void DefQuizButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefQuizButtonActionPerformed
+        switchPanels(DefQuizPanel);
+    }//GEN-LAST:event_DefQuizButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -561,6 +729,8 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton AddSlangButton;
     private javax.swing.JPanel AddSlangPanel;
     private javax.swing.JList<String> DefList;
+    private javax.swing.JButton DefQuizButton;
+    private javax.swing.JPanel DefQuizPanel;
     private javax.swing.JTextField DefTxtField;
     private javax.swing.JComboBox<String> DefinitionList;
     private javax.swing.JButton DeleteButton;
@@ -572,6 +742,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton GoRandomButton;
     private javax.swing.JButton MainButton;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton QuizNavButton;
     private javax.swing.JPanel QuizPanel;
     private javax.swing.JButton RandomButton;
     private javax.swing.JPanel RandomPanel;
@@ -583,8 +754,11 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SearchType;
     private javax.swing.JList<String> SlangList;
     private javax.swing.JTextField SlangTxtField;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton WordQuizButton;
+    private javax.swing.JPanel WordQuizPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -592,6 +766,9 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
